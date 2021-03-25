@@ -44,6 +44,13 @@
       - "graalvm-ce-{{ graalvm_ce_version }}/src.zip"
   when: not is_installed.stat.exists
 
+- name: Set user owner for graalvm-ce directory
+  file:
+    state: directory
+    owner: "{{ graalvm_ce_user }}"
+    recurse: yes
+    path: "/opt/graalvm-ce-java8-{{ graalvm_ce_version }}"
+
 - name: Clean downloaded files
   file:
     state: absent

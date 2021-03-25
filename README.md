@@ -12,6 +12,7 @@ Role Variables
 --------------
 
 graalvm_ce_version: can be set to either `latest` or a fixed version. Defaults to `latest`.
+graalvm_ce_user: user owner of the graalvm directory
 
 Dependencies
 ------------
